@@ -1,0 +1,7 @@
+## Managed components used by tw32_common.
+## Adding the led_strip dep here means every module that depends on
+## tw32_common gets the heartbeat LED for free.
+dependencies:
+  espressif/led_strip: "~2.5"
+  idf:
+    version: ">=5.0"

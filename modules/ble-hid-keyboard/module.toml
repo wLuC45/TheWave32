@@ -1,0 +1,34 @@
+[module]
+name = "ble-hid-keyboard"
+version = "0.2.0"
+description = "Teclado HID por BLE com interpretador DuckyScript (payload da NVS)"
+target = "esp32s3"
+author = "v0rtex"
+source_url = "https://github.com/wLuC45/TheWave32"
+
+[flash]
+artifacts = [
+  { path = "bootloader.bin",      offset = "0x0000"  },
+  { path = "partition-table.bin", offset = "0x8000"  },
+  { path = "firmware.bin",        offset = "0x20000" },
+]
+
+[partitions]
+nvs = { offset = "0x9000", size = "0xC000" }
+
+[[inputs]]
+key = "payload"
+prompt = "DuckyScript payload (literal text, multi-line)"
+type = "string"
+target = "nvs"
+namespace = "ducky"
+required = false
+
+[[inputs]]
+key = "start_delay_ms"
+prompt = "Delay (ms) after host subscribes before payload runs"
+type = "int"
+target = "nvs"
+namespace = "ducky"
+default = 2000
+required = false

@@ -1,0 +1,10 @@
+# module: wifi-handshake-capture
+# desc: scan, follow strongest AP, capture for 90 s
+
+scan
+sleep 6
+target 1
+start
+sleep 90
+stop
+stats

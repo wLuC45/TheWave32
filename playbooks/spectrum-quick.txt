@@ -1,0 +1,9 @@
+# module: spectrum-analyzer
+# desc: 30 s sweep over crowded 2.4 GHz mids (chans 5-11) with floor
+
+dwell 50
+range 5 11
+floor -85
+start
+sleep 30
+stop

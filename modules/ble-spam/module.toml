@@ -1,0 +1,14 @@
+[module]
+name = "ble-spam"
+version = "0.2.0"
+description = "Spam de advertising BLE (popups Apple/Samsung/Google); Apple polido, outros básicos"
+target = "esp32s3"
+author = "v0rtex"
+source_url = "https://github.com/wLuC45/TheWave32"
+
+[flash]
+artifacts = [
+  { path = "bootloader.bin",      offset = "0x0000"  },
+  { path = "partition-table.bin", offset = "0x8000"  },
+  { path = "firmware.bin",        offset = "0x10000" },
+]

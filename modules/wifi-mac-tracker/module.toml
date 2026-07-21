@@ -1,0 +1,14 @@
+[module]
+name = "wifi-mac-tracker"
+version = "0.2.0"
+description = "Rastreador de presença MAC por watchlist; eventos de entrada/saída com EMA de RSSI"
+target = "esp32s3"
+author = "v0rtex"
+source_url = "https://github.com/wLuC45/TheWave32"
+
+[flash]
+artifacts = [
+  { path = "bootloader.bin",      offset = "0x0000"  },
+  { path = "partition-table.bin", offset = "0x8000"  },
+  { path = "firmware.bin",        offset = "0x10000" },
+]

@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+.coverage
+
+# ESP-IDF generated artefacts (sdkconfig.defaults is the source of truth)
+firmware/*/build/
+firmware/*/managed_components/
+firmware/*/dependencies.lock
+firmware/*/sdkconfig
+firmware/*/sdkconfig.old
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# IDE / AI
+.claude/
+
+# Tests
+tests/
+.coverage

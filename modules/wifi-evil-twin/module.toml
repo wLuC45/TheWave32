@@ -1,0 +1,14 @@
+[module]
+name = "wifi-evil-twin"
+version = "0.1.0"
+description = "AP rogue aberto clonando um SSID alvo; esqueleto fase 1 (sem captive portal ainda)"
+target = "esp32s3"
+author = "v0rtex"
+source_url = "https://github.com/wLuC45/TheWave32"
+
+[flash]
+artifacts = [
+  { path = "bootloader.bin",      offset = "0x0000"  },
+  { path = "partition-table.bin", offset = "0x8000"  },
+  { path = "firmware.bin",        offset = "0x10000" },
+]

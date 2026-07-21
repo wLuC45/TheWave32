@@ -1,0 +1,14 @@
+[module]
+name = "wifi-bssid-clone"
+version = "0.1.0"
+description = "Clona SSID+BSSID alvo no mesmo canal para DoS de cliente resistente a MFP"
+target = "esp32s3"
+author = "v0rtex"
+source_url = "https://github.com/wLuC45/TheWave32"
+
+[flash]
+artifacts = [
+  { path = "bootloader.bin",      offset = "0x0000"  },
+  { path = "partition-table.bin", offset = "0x8000"  },
+  { path = "firmware.bin",        offset = "0x10000" },
+]

@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+
+# Pull in the shared firmware/common/ component as well as wifi-scanner/main.
+set(EXTRA_COMPONENT_DIRS "${CMAKE_CURRENT_LIST_DIR}/../tw32_common")
+
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(wifi_scanner)

@@ -1,0 +1,8 @@
+# module: ble-scanner
+# desc: passive BLE scan with stronger-than-noise filter, 45 s
+
+rssi_min -75
+start
+sleep 45
+stop
+stats

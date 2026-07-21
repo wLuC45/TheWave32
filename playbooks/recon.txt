@@ -1,0 +1,6 @@
+# module: wifi-deauth
+# desc: dump nearby APs then idle so the user can pick a target
+
+scan
+sleep 6
+stats

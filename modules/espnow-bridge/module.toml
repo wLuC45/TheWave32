@@ -1,0 +1,25 @@
+[module]
+name = "espnow-bridge"
+version = "0.2.0"
+description = "Ponte ESP-NOW <-> UART texto com AES-CCM opcional via chave na NVS"
+target = "esp32s3"
+author = "v0rtex"
+source_url = "https://github.com/wLuC45/TheWave32"
+
+[flash]
+artifacts = [
+  { path = "bootloader.bin",      offset = "0x0000"  },
+  { path = "partition-table.bin", offset = "0x8000"  },
+  { path = "firmware.bin",        offset = "0x10000" },
+]
+
+[partitions]
+nvs = { offset = "0x9000", size = "0x6000" }
+
+[[inputs]]
+key = "aes_key"
+prompt = "ESP-NOW AES-CCM key (16 bytes hex, optional)"
+type = "string"
+target = "nvs"
+namespace = "espnow"
+required = false

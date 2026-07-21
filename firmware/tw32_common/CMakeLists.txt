@@ -1,0 +1,22 @@
+idf_component_register(
+  SRCS
+    "src/tw32_io.c"
+    "src/tw32_cdc_cli.c"
+    "src/tw32_json_out.c"
+    "src/tw32_nvs_kv.c"
+    "src/tw32_wifi_scan.c"
+    "src/tw32_led.c"
+    "src/tw32_ap_security.c"
+  INCLUDE_DIRS "include"
+  REQUIRES
+    nvs_flash
+    esp_event
+    esp_driver_uart
+    esp_wifi
+    esp_timer
+    esp_hw_support
+    freertos
+    log
+  PRIV_REQUIRES
+    espressif__led_strip
+)

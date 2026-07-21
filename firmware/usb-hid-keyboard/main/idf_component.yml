@@ -1,0 +1,6 @@
+## TinyUSB Espressif wrapper — fetched from the component registry on
+## first build. Pinned to the 1.x series; HID API is stable.
+dependencies:
+  espressif/esp_tinyusb: "~1.4.0"
+  idf:
+    version: ">=5.0"

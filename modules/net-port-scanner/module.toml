@@ -1,0 +1,42 @@
+[module]
+name = "net-port-scanner"
+version = "0.1.0"
+description = "Varredura de portas TCP pela rede Wi-Fi que o dispositivo associar"
+target = "esp32s3"
+author = "v0rtex"
+source_url = "https://github.com/wLuC45/TheWave32"
+
+[flash]
+artifacts = [
+  { path = "bootloader.bin",      offset = "0x0000"  },
+  { path = "partition-table.bin", offset = "0x8000"  },
+  { path = "firmware.bin",        offset = "0x10000" },
+]
+
+[partitions]
+nvs = { offset = "0x9000", size = "0x6000" }
+
+[[inputs]]
+key = "ssid"
+prompt = "Wi-Fi SSID to associate with (leave blank to set later via NVS)"
+type = "string"
+target = "nvs"
+namespace = "netps"
+required = false
+
+[[inputs]]
+key = "password"
+prompt = "Wi-Fi password (blank for open networks)"
+type = "string"
+target = "nvs"
+namespace = "netps"
+required = false
+
+[[inputs]]
+key = "ports"
+prompt = "Comma-separated TCP port list to probe"
+type = "string"
+target = "nvs"
+namespace = "netps"
+default = "22,80,443,8080"
+required = false

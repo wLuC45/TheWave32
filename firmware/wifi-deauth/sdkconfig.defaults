@@ -1,0 +1,31 @@
+# Target chip
+CONFIG_IDF_TARGET="esp32s3"
+
+# CPU + RTOS
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_FREERTOS_HZ=1000
+
+# Route IDF console to UART0 too so panic dumps appear alongside our JSON.
+# Log level kept at WARN — no normal-path noise, but warnings/errors visible.
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+CONFIG_LOG_DEFAULT_LEVEL_WARN=y
+
+# PSRAM (8 MB octal)
+CONFIG_SPIRAM=y
+CONFIG_SPIRAM_MODE_OCT=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_USE_MALLOC=y
+# Without this, Wi-Fi internal buffers are forced into the small internal-RAM
+# heap and `esp_wifi_scan_start` can stall the chip silently (see hardware.md).
+CONFIG_SPIRAM_TRY_ALLOCATE_WIFI_LWIP=y
+
+# Bootloader quiet
+CONFIG_BOOTLOADER_LOG_LEVEL_WARN=y
+
+# Use custom partition table
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+
+# Optimisation
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
